@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <title>Exercice</title>
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <h1>01 - Démo</h1>
+                <h2>Révision</h2>
+            </header>
+
+            <section>
+                <h3>1. Lier le fichier JS correctement. Utilisez des fonctions pour chaque exercice.</h3>
+            </section>
+
+            <section>
+                <h3>2. Sélectionner le premier bouton et ajouter la classe danger</h3>
+                <div class="btn-groupe">
+                    <div id="demo1-sect2-btn" class="btn">
+                        <p>Bouton à modifier</p>
+                    </div>
+                    <div id="demo1-sect2-btn" class="btn">
+                        <p>Bouton à ne pas modifier</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    3. Au clic du bouton, ajouter une balise p contenant le texte "Bonjour" dans la div
+                    ".texte-conteneur"
+                </h3>
+                <div class="btn-groupe">
+                    <div id="demo1-sect2-btn" class="btn">
+                        <p>Cliquez-moi!</p>
+                    </div>
+                </div>
+                <p>Le texte devrait s'afficher ci-dessous:</p>
+                <div
+                    class="texte-conteneur"
+                    style="border: 0.5px solid var(--coul-principale-moyen-bleu); padding: 1rem"
+                >
+                    <!-- Le texte devrait s'afficher ici -->
+                </div>
+            </section>
+
+            <section>
+                <h3>
+                    4. Sélectionner le champ par son attribut name et au changement générer (via le fichier JS) le
+                    nombre de boutons indiqués
+                </h3>
+                <h4>Au chargement de la page, le nombre de bouton par défaut devrait être automatiquement généré.</h4>
+                <hr />
+                <br />
+
+                <div class="champs-groupe">
+                    <label for="demo1-sect2-champ">Quantité de boutons</label>
+                    <input type="number" name="demo1-sect2-qte" id="demo1-sect2-champ" min="1" max="4" value="1" />
+                </div>
+
+                <p>Les boutons devraient s'ajouter ci-dessous:</p>
+                <div class="btn-groupe" style="border: 0.5px solid var(--coul-principale-moyen-bleu); padding: 1rem">
+                    <!-- Les boutons devraient s'ajouter ici -->
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

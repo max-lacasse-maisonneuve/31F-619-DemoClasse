@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url(reset.css);
+
+/* Styles de base */
+:root {
+    --coul-noir: #191919;
+    --coul-blanc: #fff;
+    --coul-principale-fonce: #13538b;
+    --coul-principale-moyen-bleu: #2c8ccb;
+    --coul-principale-pale-bleu: #36b7da;
+    --coul-principale-moyen-vert: #3cbdbb;
+    --coul-principale-pale-vert: #80cdcc;
+
+    --coul-accent-fonce: #a88815;
+    --coul-accent-moyen: #ffc700;
+    --coul-accent-pale: #fce38b;
+}
+
+html,
+body {
+    padding: 3rem;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    color: var(--coul-blanc);
+    font-weight: 500;
+    line-height: 1.2;
+    background-color: var(--coul-noir);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 1.2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--coul-blanc);
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--coul-principale-pale-vert);
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--coul-principale-moyen-vert);
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.075rem;
+    color: var(--coul-principale-pale-bleu);
+}
+
+p {
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.025rem;
+    color: var(--coul-principale-pale-vert);
+}
+
+hr {
+    height: 1.5px;
+    background-color: var(--coul-principale-fonce);
+    border: none;
+    margin-bottom: 1.5rem;
+}
+/* Composants */
+.btn {
+    border-radius: 15px;
+    background-color: var(--coul-principale-moyen-bleu);
+
+    min-width: 10vw;
+    width: fit-content;
+    padding: 1.5rem;
+    cursor: pointer;
+    border: 2px solid var(--coul-principale-pale-bleu);
+    transition: border 300ms, background-color 300ms;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.btn p {
+    color: var(--coul-blanc);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: var(--coul-principale-fonce);
+}
+
+.btn:active {
+    background-color: var(--coul-principale-moyen-vert);
+    border-color: var(--coul-blanc);
+}
+
+.btn.danger {
+    background-color: var(--coul-accent-moyen);
+    border: 2px solid var(--coul-accent-pale);
+}
+
+.btn.danger:hover {
+    background-color: var(--coul-accent-fonce);
+}
+
+.btn.danger:active {
+    background-color: var(--coul-accent-pale);
+    border-color: var(--coul-blanc);
+}
+
+.btn-groupe {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Formulaire*/
+.champs-groupe {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coul-principale-pale-vert);
+    margin-bottom: 0.5rem;
+}
+
+input {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--coul-principale-moyen-bleu);
+    padding: 0.5rem;
+    border: 2px solid var(--coul-principale-fonce);
+    border-radius: 5px;
+    background-color: var(--coul-blanc);
+    margin-bottom: 1rem;
+}
+
+/* Structure de page */
+main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+}
+
+main > header {
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+    border-left: 1.5rem solid var(--coul-principale-pale-vert);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main > header h1,
+main > header h2 {
+    margin: 0;
+}
+
+main section {
+    padding: 1.5rem 0;
+    padding-bottom: 3rem;
+    border-top: 4px solid var(--coul-principale-moyen-bleu);
+}
+
+main header + section {
+    border-top: none;
+}
