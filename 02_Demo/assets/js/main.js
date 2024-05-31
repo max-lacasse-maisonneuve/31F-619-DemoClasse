@@ -23,3 +23,6 @@
 //- Map - Un tableau d'éléments transformés
 //- Some - Contient un élément avec condition
 //- Every - Contient tous les éléments avec condition
+
+//Destructuration
+//Spread operator
