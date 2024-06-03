@@ -8,8 +8,6 @@
 
 @import url("./base/general.css");
 
-@import url("./components/button.css");
-
 @import url("./layout/nav.css");
 @import url("./layout/card.css");
 @import url("./layout/drumkit.css");
