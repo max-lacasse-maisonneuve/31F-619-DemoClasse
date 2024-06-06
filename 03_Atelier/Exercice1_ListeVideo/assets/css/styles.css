@@ -39,14 +39,14 @@ p {
 h1 {
     font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--coul-blanc);
 }
 
 h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--coul-principale-moyen-bleu);
+    color: var(--coul-principale-pale-vert);
 }
 
 h3 {
@@ -71,8 +71,8 @@ p {
 }
 
 hr {
-    height: 4px;
-    background-color: var(--coul-principale-moyen-vert);
+    height: 1.5px;
+    background-color: var(--coul-principale-fonce);
     border: none;
     margin-bottom: 1.5rem;
 }
@@ -91,6 +91,7 @@ hr {
     margin: 1rem 0;
 }
 
+.btn,
 .btn p {
     color: var(--coul-blanc);
     font-size: 1.5rem;
@@ -153,23 +154,33 @@ input {
 }
 
 /* Structure de page */
-main,
-header {
+main {
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 70%;
 }
 
-main section {
-    padding: 1.5rem 0;
-    padding-bottom: 5rem;
-    border-bottom: 0.25px solid var(--coul-principale-fonce);
+main > header {
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+    border-left: 1.5rem solid var(--coul-principale-pale-vert);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-main > header {
-    padding-left: 4rem;
-    margin-bottom: 4rem;
-    margin-left: -6rem;
-    border-left: 2rem solid var(--coul-principale-fonce);
+main > header h1,
+main > header h2 {
+    margin: 0;
+}
+
+main section {
+    padding: 1.5rem 0;
+    padding-bottom: 3rem;
+    border-top: 4px solid var(--coul-principale-moyen-bleu);
+}
+
+main header + section {
+    border-top: none;
 }
