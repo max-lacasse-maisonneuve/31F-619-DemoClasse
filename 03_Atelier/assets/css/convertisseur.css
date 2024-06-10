@@ -1,0 +1,21 @@
+[data-convertisseur] {
+    & [data-convertisseur-element] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    & input {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--coul-principale-moyen-bleu);
+        padding: 0.5rem;
+        border: 2px solid var(--coul-principale-fonce);
+        border-radius: 5px;
+        background-color: var(--coul-blanc);
+        max-width: 100px;
+        text-align: center;
+    }
+}
