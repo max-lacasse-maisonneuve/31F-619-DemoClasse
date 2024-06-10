@@ -30,3 +30,5 @@ const tableauVideosYouTube = [
         chaineYouTube: "ColorCode",
     },
 ];
+
+export default tableauVideosYouTube;
