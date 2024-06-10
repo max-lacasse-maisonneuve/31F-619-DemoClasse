@@ -12,7 +12,7 @@
 ## Étapes de la démo
 
 1. Créer un objet Oeuvres sous la forme d'une classe
-2. Créer une classe de Livre dans son propre fichier
+2. Créer une classe de Oeuvre dans son propre fichier
 3. Ajouter des propriétés
 4. Ajouter des méthodes
 5. Instancier la classe et comparer les notions de constructeur et d'instanciation
