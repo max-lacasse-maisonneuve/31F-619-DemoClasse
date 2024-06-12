@@ -12,10 +12,13 @@ const conteneur = document.querySelector(".instruments-container");
  */
 function Instrument(nom, audioSrc, imageSrc, conteneur) {
     this.nom = nom;
-    this.audioSrc = audioSrc;
-    this.imageSrc = imageSrc;
+    this.audioSrc = `assets/audio/${audioSrc}.wav`;
+    this.imageSrc = `assets/img/${imageSrc}.svg`;
+
+    this.audioElement = new Audio(this.audioSrc);
     this.conteneurHTML = conteneur;
     this.elementHTML;
+
     this.injecterHTML();
 }
 
@@ -24,7 +27,7 @@ function Instrument(nom, audioSrc, imageSrc, conteneur) {
  */
 Instrument.prototype.injecterHTML = function () {
     const bouton = `<button class="instrument-button">
-        <img src="assets/img/${this.imageSrc}.svg" alt="${this.nom}" />
+        <img src="${this.imageSrc}" alt="${this.nom}" />
         <span>${this.nom}</span>
     </button>`;
 
@@ -37,8 +40,7 @@ Instrument.prototype.injecterHTML = function () {
  * Fonction servant à jouer le son au clic
  */
 Instrument.prototype.jouer = function () {
-    const audio = new Audio(`assets/audio/${this.audioSrc}.wav`);
-    audio.play();
+    this.audioElement.play();
 };
 
 /**
