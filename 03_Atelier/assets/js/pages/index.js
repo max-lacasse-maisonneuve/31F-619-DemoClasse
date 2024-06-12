@@ -2,20 +2,37 @@
 const conteneur = document.querySelector(".instruments-container");
 
 // Fonctions
-function Instrument(name, audioSrc, imageSrc) {
-    // =========================
-    //Exemple de code à injecter
-    // `<button class="instrument-button">
-    //             <img src="assets/img/${this.imageSrc}.svg" alt="${this.name}" />
-    //             <span>${this.name}</span>
-    //         </button>`
-    //========================
-    // Exemple de code pour créer un objet audio et le faire jouer
-    // const audio = new Audio(`assets/audio/${this.audioSrc}.wav`);
-    // audio.play();
+function Instrument(nom, audioSrc, imageSrc, conteneur) {
+    this.nom = nom;
+    this.audioSrc = audioSrc;
+    this.imageSrc = imageSrc;
+    this.conteneurHTML = conteneur;
+    this.elementHTML;
+    this.injecterHTML();
 }
 
-function init() {}
+Instrument.prototype.injecterHTML = function () {
+    const button = `<button class="instrument-button">
+        <img src="assets/img/${this.imageSrc}.svg" alt="${this.nom}" />
+        <span>${this.nom}</span>
+    </button>`;
+
+    this.conteneurHTML.insertAdjacentHTML("beforeend", button);
+    this.elementHTML = this.conteneurHTML.lastElementChild;
+    this.elementHTML.addEventListener("click", this.jouer.bind(this));
+};
+
+Instrument.prototype.jouer = function () {
+    const audio = new Audio(`assets/audio/${this.audioSrc}.wav`);
+    audio.play();
+};
+
+function init() {
+    new Instrument("Tambour", "drum", "drum", conteneur);
+    new Instrument("Maracas", "maracas", "maracas", conteneur);
+    new Instrument("Baguettes", "drumsticks", "drumsticks", conteneur);
+    new Instrument("Cymbale", "cymbal", "cymbal", conteneur);
+}
 
 // Exécution
 init();
