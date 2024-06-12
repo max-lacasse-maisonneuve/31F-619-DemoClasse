@@ -27,4 +27,8 @@
         margin-bottom: 0.5rem;
         color: var(--color-secondary-400);
     }
+
+    &.favoris {
+        background-color: red;
+    }
 }

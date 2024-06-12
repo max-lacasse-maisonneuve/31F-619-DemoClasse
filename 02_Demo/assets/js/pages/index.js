@@ -54,18 +54,31 @@ function Oeuvre(titre, artiste, conteneur) {
     this.titre = titre;
     this.artiste = artiste;
     this.conteneur = conteneur;
+    this.elementHTML;
 }
 
 Oeuvre.prototype.injecterHTML = function () {
-    let gabarit = `<div>${this.titre}/${this.artiste}</div>`;
+    let gabarit = `<div class="card">${this.titre}/${this.artiste}</div>`;
     this.conteneur.insertAdjacentHTML("beforeend", gabarit);
+    this.elementHTML = this.conteneur.lastElementChild;
+    this.elementHTML.addEventListener("click", this.mettreEnFavoris);
 };
-
+Oeuvre.prototype.mettreEnFavoris = () => {
+    console.log(this);
+    this.elementHTML.classList.toggle("favoris");
+    // console.log(this.__proto__.nombre--);
+};
+Oeuvre.prototype.nombre = 5;
 function init() {
-    let nouvelleOeuvre = new Oeuvre("Patate", "M. Patate", conteneur);
-    let nouvelleOeuvre2 = new Oeuvre("Patate2", "M. Patate2", conteneur);
-    nouvelleOeuvre.injecterHTML();
-    nouvelleOeuvre2.injecterHTML();
+    // let nouvelleOeuvre = new Oeuvre("Patate", "M. Patate", conteneur);
+    // let nouvelleOeuvre2 = new Oeuvre("Patate2", "M. Patate2", conteneur);
+    // nouvelleOeuvre.injecterHTML();
+    // nouvelleOeuvre2.injecterHTML();
+    const oeuvres = museeInfos.results;
+    oeuvres.forEach(function (element, index) {
+        const oeuvre = new Oeuvre(element.titre, element.libelleNomsArtistes, conteneur);
+        oeuvre.injecterHTML();
+    });
 }
 
 // Exécution
