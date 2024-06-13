@@ -1,4 +1,6 @@
 import museeInfos from "../data/museeInfos.js";
+import GestionnaireOeuvre from "../classes/GestionnaireOeuvre.js";
+
 // Variables et constantes
 const conteneur = document.querySelector(".liste-oeuvres");
 
@@ -19,10 +21,12 @@ const conteneur = document.querySelector(".liste-oeuvres");
 // 4. Ajouter des méthodes
 // 5. Instancier la classe et comparer les notions de constructeur et d'instanciation
 // 6. Afficher le résultat dans la page Web.
-// 7. Contexte, mot-clé _this_ et fonctions fléchées
+// 7. Contexte, mot-clé this et fonctions fléchées
 // 8. Boucler sur un tableau d'objet pour afficher une liste de oeuvres
 
-function init() {}
+function init() {
+    let gest = new GestionnaireOeuvre(museeInfos.results);
+}
 
 // Exécution
 init();
