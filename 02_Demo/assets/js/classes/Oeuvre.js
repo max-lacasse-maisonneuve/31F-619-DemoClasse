@@ -1,10 +1,12 @@
 class Oeuvre {
     constructor(infosOeuvre, id, conteneur) {
-        const { libelleNomsArtistes, titre, dateProduction, categorie, materiaux, images } = infosOeuvre;
+        const { libelleNomsArtistes, titre, dateProduction, categorie, materiaux, images, dateAcquisition } =
+            infosOeuvre;
 
         this.libelleNomsArtistes = libelleNomsArtistes;
         this.titre = titre;
         this.dateProduction = dateProduction;
+        this.dateAcquisition = dateAcquisition;
         this.categorie = categorie;
         this.materiaux = materiaux;
         this.images = images;
@@ -30,8 +32,10 @@ class Oeuvre {
                     ${imageOeuvre}
                     <div class="infos-container">
                         <h2 class="infos__titre">${this.titre}</h2>
+                        <h3 class="infos__artiste">${this.libelleNomsArtistes}</h3>
+                        <p class="infos__date">Date de production: ${this.dateProduction}</p>
+                        <p class="infos__dateAcquisition">Date d'acquisition: ${this.dateAcquisition}</p>
                         <p class="infos__categorie">${this.categorie}</p>
-                        <p>Ajouter ici les autres infos de l'oeuvre</p>
                     </div>
             </div>
         `;

@@ -1,40 +1,33 @@
-# Démo cours 4 - Convertisseur d'unités
+# Exercice 2 - Boites modales spécialisée
 
 ## Tâches
 
-L’exercice consiste créer un composant qui convertit des unités de mesure de pouces à centimètres (1po = 2.54cm). Le composant doit être encapsulé dans une classe et doit être auto-exécutable. Le composant doit être ajouté à chaque endroit avec l'attribut `data-convertisseur`.
+Vous devez créer votre travail à part de ce lien : [https://classroom.github.com/a/ifj1SsM-](https://classroom.github.com/a/ifj1SsM-).
 
-Vous devez créer une classe `Convertisseur` qui contient les méthodes suivantes :
+Vous devez utiliser le polymorphisme pour créer une boîte modale spécialisée pour les alertes, les messages de succès.
 
--   injecterHTML
--   convertir
+-   Les boites doivent hériter de la classe `Modale` et doivent redéfinir les méthodes `injecterHTML`.
 
-Les propriétés et méthodes de la classe **doivent être toutes privées**.
+-   Les `modales` doivent avoir toutes avoir un bouton de fermeture.
 
-Le **code principal doit être enveloppé dans une fonction anonyme auto-exécutable** pour éviter les collisions et la pollution de l'espace global.
+-   Les `alertes` et les `boites de succès` doivent afficher un message qui est formaté différemment. Exemple : les alertes sont rouges et les messages de succès sont verts.
 
-### HTML
+-   La `boite de succès` se ferme automatiquement après 3 secondes, vous devez donc redéfinir la méthode `afficher` pour qu'elle se ferme automatiquement après 3 secondes.
 
-Pour éviter d'avoir à gérer le CSS, vous pouvez utiliser le code HTML suivant lors de l'instanciation du composant :
+Vous devez créer le CSS pour les boites modales. Si vous prenez du code CSS d'internet, vous devez le citer dans votre code.
 
-```html
-<div data-convertisseur-element>
-    <input type="text" data-unite="po" />
-    <label>pouces</label>
-    =
-    <input type="text" data-unite="cm" readonly disabled />
-    <label>centimètres</label>
-</div>
-```
+Voir le schéma UML pour plus de détails.
 
-### Gestion des erreurs
+## Bonus
 
-Assurez-vous de bien convertir les unités en nombres avant de les manipuler. Si la valeur n'est pas un nombre, laissez le 2e champ vide.
+Si vous voulez vous donner un défi supplémentaire, créez une classe confirmation qui hérite de la classe `Modale` et qui contient un bouton pour annuler et un bouton pour confirmer. La boite de confirmation contient une fonction de rappel qui est appelée lorsque l'utilisateur clique sur le bouton de confirmation.
 
-## Élément de difficulté - Bonus
+Si la classe est correctement réalisée, je vous ajouterai 1% à votre note finale.
 
-Si vous voulez vous donner un défi supplémentaire, vous pouvez ajouter la possibilité intervertir les unités de mesure ou de convertir les centimètres en pouces si on écrit dans le 2e champ.
+## Remise
+
+Vous devez réaliser plusieurs commits pour montrer l'évolution de votre travail.
 
 ## Note importante
 
-Cet exercice n'est pas à remettre.
+Cet exercice compte pour 5% de la note finale.
