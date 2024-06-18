@@ -18,7 +18,7 @@ var listeOeuvresInstanciees = [];
 //     - Exportation nommée
 //     - Renommage d'une importation nommée
 
-// 5. Créer une classe encapsulée pour le triage des oeuvres.
+// 5. Créer une classe encapsulée pour le triage/filtre des oeuvres.
 
 function init() {
     // listeOeuvres.forEach((oeuvre, index) => {
