@@ -1,11 +1,10 @@
-import museeInfos from "../data/museeInfos.js";
-import Oeuvre from "../classes/Oeuvre.js";
-import Estampe from "../classes/Estampe.js";
+// import museeInfos from "../data/museeInfos.js";
+// import Oeuvre from "../classes/Oeuvre.js";
 
 // Variables et constantes
-const listeOeuvres = museeInfos.results;
+// const listeOeuvres = museeInfos.results;
 const conteneur = document.querySelector(".card-container");
-
+var listeOeuvresInstanciees = [];
 // =======================
 //        À voir
 // =======================
@@ -19,9 +18,14 @@ const conteneur = document.querySelector(".card-container");
 //     - Exportation nommée
 //     - Renommage d'une importation nommée
 
-// 5. Créer une fonction facade pour gerer l'initialisation de l'application.
+// 5. Créer une classe encapsulée pour le triage des oeuvres.
 
-function init() {}
+function init() {
+    // listeOeuvres.forEach((oeuvre, index) => {
+    //     const nouvelleOeuvre = new Oeuvre(oeuvre, index, conteneur);
+    //     listeOeuvresInstanciees.push(nouvelleOeuvre);
+    // });
+}
 
 // Exécution
 init();
