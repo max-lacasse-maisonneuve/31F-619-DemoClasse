@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import museeInfos from "../data/museeInfos.js";
 import Oeuvre from "../classes/Oeuvre.js";
 import FiltresOeuvre from "./FiltresOeuvre.js";
@@ -22,13 +21,5 @@ class GestionnaireMusee {
             this.listeOeuvresInstanciees.push(nouvelleOeuvre);
         });
     }
-    patate() {
-        console.log("patate");
-    }
 }
 export default GestionnaireMusee;
-=======
-class GestionnaireMusee {
-    constructor() {}
-}
->>>>>>> e519eaa (Modifi)

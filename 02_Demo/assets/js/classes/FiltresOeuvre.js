@@ -1,16 +1,13 @@
 class FiltresOeuvre {
     constructor(gestionnaire) {
         this.gestionnaire = gestionnaire;
-        console.log(this.gestionnaire.listeOeuvresInstanciees);
 
         this.gestionnaire.listeOeuvresInstanciees.forEach(function (oeuvre) {
-            oeuvre.afficher(false);
+            oeuvre.afficher(true);
         });
     }
-    
-    injecterHTML(){
 
-    }
+    injecterHTML() {}
 }
 
 export default FiltresOeuvre;
