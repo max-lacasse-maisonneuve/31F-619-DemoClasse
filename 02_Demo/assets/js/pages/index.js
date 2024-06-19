@@ -1,8 +1,8 @@
-// import museeInfos from "../data/museeInfos.js";
-// import Oeuvre from "../classes/Oeuvre.js";
+import museeInfos from "../data/museeInfos.js";
+import Oeuvre from "../classes/Oeuvre.js";
 
 // Variables et constantes
-// const listeOeuvres = museeInfos.results;
+const listeOeuvres = museeInfos.results;
 const conteneur = document.querySelector(".card-container");
 var listeOeuvresInstanciees = [];
 // =======================
@@ -21,10 +21,10 @@ var listeOeuvresInstanciees = [];
 // 5. Créer une classe encapsulée pour le triage/filtre des oeuvres.
 
 function init() {
-    // listeOeuvres.forEach((oeuvre, index) => {
-    //     const nouvelleOeuvre = new Oeuvre(oeuvre, index, conteneur);
-    //     listeOeuvresInstanciees.push(nouvelleOeuvre);
-    // });
+    listeOeuvres.forEach((oeuvre, index) => {
+        const nouvelleOeuvre = new Oeuvre(oeuvre, index, conteneur);
+        listeOeuvresInstanciees.push(nouvelleOeuvre);
+    });
 }
 
 // Exécution
