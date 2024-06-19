@@ -98,3 +98,7 @@ header {
 .estampe {
     background-color: rgb(255, 140, 0);
 }
+
+.invisible {
+    display: none !important;
+}
