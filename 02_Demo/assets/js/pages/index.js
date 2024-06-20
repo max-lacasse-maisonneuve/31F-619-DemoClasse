@@ -1,8 +1,11 @@
+import Bouton from "../classes/Bouton.js";
+import BoutonDanger from "../classes/BoutonDanger.js";
 import GestionnaireMusee from "../classes/GestionnaireMusee.js";
+import Modale from "../classes/Modale.js";
+(function () {
+    // Variables et constantes
 
-// Variables et constantes
-
-/* =======================
+    /* =======================
 //        À voir
 // =======================
 // ## Contenu à maîtriser à la fin du cours
@@ -13,9 +16,14 @@ import GestionnaireMusee from "../classes/GestionnaireMusee.js";
 * Révision des boites modales
 */
 
-function init() {
-    new GestionnaireMusee();
-}
+    function init() {
+        new GestionnaireMusee();
+        let modale = new Modale(this, "Patate Test", document.body);
+        modale.injecterHTML();
+        modale.changerMessage("Bonjour");
 
-// Exécution
-init();
+        modale.afficher();
+    }
+    // Exécution
+    init();
+})();

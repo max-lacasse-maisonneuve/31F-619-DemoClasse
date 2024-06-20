@@ -1,12 +1,14 @@
 @import url("./base/reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("./components/bouton.css");
+@import url("./components/modale.css");
 html,
 body {
     font-family: "Urbanist", sans-serif;
     font-optical-sizing: auto;
     padding: 0.5rem;
+    position: relative;
 }
 
 h1 {

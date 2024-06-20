@@ -1,0 +1,18 @@
+.bouton {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #223f9d;
+    color: white;
+    width: fit-content;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: color-mix(in oklab, #223f9d 50%, transparent 50%);
+    }
+
+    &[data-etat="danger"] {
+        background-color: #d0001a;
+        color: white;
+    }
+}
