@@ -1,0 +1,20 @@
+html,
+body {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0.5rem;
+    position: relative;
+    transition: all 350ms;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: "Gwendolyn", cursive;
+}
+h2 {
+    font-family: "Gwendolyn", cursive;
+    font-size: 1.5rem;
+}
+header {
+    padding: 2rem 0.75rem;
+}

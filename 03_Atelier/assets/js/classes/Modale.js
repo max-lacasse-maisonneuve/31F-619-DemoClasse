@@ -1,11 +1,10 @@
 class Modale {
-    #gestionnaire;
+
     #message;
     #conteneurHTML;
     #elementHTML;
 
-    constructor(gestionnaire, message, conteneurHTML) {
-        this.#gestionnaire = gestionnaire;
+    constructor( message, conteneurHTML) {
         this.#message = message;
         this.#conteneurHTML = conteneurHTML;
         this.#elementHTML;

@@ -1,8 +1,9 @@
 class Oeuvre {
-    constructor(infosOeuvre, id, conteneur) {
+    constructor(gestionnaire, infosOeuvre, id, conteneur) {
         const { libelleNomsArtistes, titre, dateProduction, categorie, materiaux, images, dateAcquisition } =
             infosOeuvre;
 
+        this.gestionnaire = gestionnaire;
         this.libelleNomsArtistes = libelleNomsArtistes;
         this.titre = titre;
         this.dateProduction = dateProduction;
@@ -59,7 +60,8 @@ class Oeuvre {
     }
 
     afficherOeuvre() {
-        console.log(this);
+        this.gestionnaire.modale.changerMessage(this.titre);
+        this.gestionnaire.modale.afficher();
     }
 }
 

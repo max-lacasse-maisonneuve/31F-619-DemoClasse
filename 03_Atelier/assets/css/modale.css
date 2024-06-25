@@ -13,13 +13,14 @@
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.644);
+    background-color: rgba(0, 0, 0, 0.386);
     display: flex;
     justify-content: center;
     align-items: center;
 
     & .modale__carte {
         background-color: white;
+        color: black;
         border-radius: 5px;
         height: 40%;
         width: 50%;

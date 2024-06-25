@@ -3,13 +3,16 @@ class Bouton {
     #elementHTML;
     #action;
     #texte;
+
     constructor(conteneurHTML, texte) {
         this.#conteneurHTML = conteneurHTML;
         this.#texte = texte;
     }
+
     get conteneurHTML() {
         return this.#conteneurHTML;
     }
+
     set conteneurHTML(nouveauConteneur) {
         this.#conteneurHTML = nouveauConteneur;
     }
@@ -26,6 +29,7 @@ class Bouton {
     set texte(nouveauTexte) {
         this.#texte = nouveauTexte;
     }
+
     #injecterHTML() {
         let gabarit = `
             <div class="bouton">${this.#texte}</div>
