@@ -1,6 +1,6 @@
 class Bouton {
     #conteneurHTML;
-    #elementHTML;
+    elementHTML;
     #action;
     #texte;
 
@@ -18,10 +18,10 @@ class Bouton {
     }
 
     get elementHTML() {
-        return this.#elementHTML;
+        return this.elementHTML;
     }
     set elementHTML(nouvelElement) {
-        this.#elementHTML = nouvelElement;
+        this.elementHTML = nouvelElement;
     }
     get texte() {
         return this.#texte;
@@ -30,14 +30,14 @@ class Bouton {
         this.#texte = nouveauTexte;
     }
 
-    #injecterHTML() {
+    injecterHTML() {
         let gabarit = `
             <div class="bouton">${this.#texte}</div>
         `;
 
         this.#conteneurHTML.insertAdjacentHTML("beforeend", gabarit);
-        this.#elementHTML = this.#conteneurHTML.lastElementChild;
-        this.#elementHTML.dataset.etat = "regulier";
+        this.elementHTML = this.#conteneurHTML.lastElementChild;
+        this.elementHTML.dataset.etat = "regulier";
     }
 
     onClic() {

@@ -1,3 +1,4 @@
+import GestionnaireMusee from "./GestionnaireMusee.js";
 class Modale {
     #gestionnaire;
     #message;
@@ -5,14 +6,21 @@ class Modale {
     #elementHTML;
 
     constructor(gestionnaire, message, conteneurHTML) {
-        this.#gestionnaire = gestionnaire;
+        // console.log(GestionnaireMusee.instance.listeOeuvresInstanciees);
+        this.#gestionnaire = GestionnaireMusee.instance;
         this.#message = message;
         this.#conteneurHTML = conteneurHTML;
         this.#elementHTML;
 
         this.#injecterHTML();
+        document.addEventListener("afficherModale", this.onDemarrageDistant.bind(this));
     }
 
+    onDemarrageDistant(evenement) {
+        const titre = evenement.detail.titre;
+        this.changerMessage(titre);
+        this.afficher();
+    }
     /**
      * Fonction pour injecter le HTML de la modale dans le DOM
      * Crée un élément HTML pour la modale et l'ajoute au conteneur HTML

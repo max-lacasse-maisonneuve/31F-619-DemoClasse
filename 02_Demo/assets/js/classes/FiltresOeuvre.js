@@ -1,9 +1,9 @@
 import GestionnaireMusee from "./GestionnaireMusee.js";
 
 class FiltresOeuvre {
-    constructor(gestionnaireMusee) {
+    constructor() {
         //TODO: retirer le lien vers le GestionnaireMusee
-        this.gestionnaireMusee = gestionnaireMusee;
+        this.gestionnaireMusee = GestionnaireMusee.instance;
         this.conteneurHTML = document.querySelector(".filters-container");
 
         this.elementHTML;

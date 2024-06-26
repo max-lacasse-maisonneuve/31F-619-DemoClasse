@@ -8,13 +8,16 @@ class BoutonDanger extends Bouton {
     }
 
     #injecterHTML() {
+        super.injecterHTML();
+        let elementTemporaire = super.elementHTML;
+
         let gabarit = `
             <div class="bouton">${this.texte}</div>
         `;
 
-        this.conteneurHTML.insertAdjacentHTML("beforeend", gabarit);
-        this.elementHTML = this.conteneurHTML.lastElementChild;
-        this.elementHTML.dataset.etat = "danger";
+        elementTemporaire.insertAdjacentHTML("beforeend", gabarit);
+        this.elementHTML = elementTemporaire.lastElementChild;
+        elementTemporaire.dataset.etat = "danger";
     }
     onClic() {
         console.log("patate danger");

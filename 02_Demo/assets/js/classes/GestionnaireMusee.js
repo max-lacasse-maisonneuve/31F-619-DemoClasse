@@ -4,6 +4,7 @@ import FiltresOeuvre from "../classes/FiltresOeuvre.js";
 import Modale from "./Modale.js";
 class GestionnaireMusee {
     //TODO: Ajouter les propriétés privées de l'instance
+    static instance;
     #listeOeuvres;
     #conteneurOeuvres;
     #listeOeuvresInstanciees;
@@ -11,6 +12,11 @@ class GestionnaireMusee {
 
     constructor() {
         // TODO: Patron singleton pour l'instance de la classe
+        if (!GestionnaireMusee.instance) {
+            GestionnaireMusee.instance = this;
+        }else{
+            return GestionnaireMusee.instance;
+        }
 
         //Propriétés de la classe
         this.#listeOeuvres = museeInfos.results;
@@ -27,7 +33,7 @@ class GestionnaireMusee {
 
     // Méthode statique pour obtenir l'instance de la classe
     // Permet d'obtenir l'instance de la classe sans avoir à instancier la classe
-    //TODO: Ajouter un accesseur statique pour l'instance
+
 
     /**
      * Getter pour la liste d'oeuvres instanciées

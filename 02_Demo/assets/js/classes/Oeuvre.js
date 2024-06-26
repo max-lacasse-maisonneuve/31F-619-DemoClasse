@@ -1,4 +1,6 @@
 class Oeuvre {
+    static exemple = "Patate";
+
     constructor(gestionnaire, infosOeuvre, id, conteneur) {
         const { libelleNomsArtistes, titre, dateProduction, categorie, materiaux, images, dateAcquisition } =
             infosOeuvre;
@@ -60,8 +62,17 @@ class Oeuvre {
     }
 
     afficherOeuvre() {
-        this.gestionnaire.modale.changerMessage(this.titre);
-        this.gestionnaire.modale.afficher();
+        let config = {
+            detail: {
+                titre: this.titre,
+                images: this.images,
+            },
+        };
+        let nouvelEvenement = new CustomEvent("afficherModale", config);
+        document.dispatchEvent(nouvelEvenement);
+
+        // this.gestionnaire.modale.changerMessage(this.titre);
+        // this.gestionnaire.modale.afficher();
     }
 }
 
