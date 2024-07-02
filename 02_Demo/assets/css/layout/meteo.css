@@ -1,0 +1,66 @@
+body {
+    background-color: #bfefff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='190' viewBox='0 0 120 120'%3E%3Cpolygon fill='%2399B9CC' fill-opacity='0.19' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E"); /* background-color: lightblue; */
+
+    &[data-meteo="nuageux"] {
+        background-color: rgb(213, 230, 235);
+    }
+    &[data-meteo="pluie"] {
+        background-color: rgb(172, 194, 206);
+    }
+    &[data-meteo="soleil"] {
+        background-color: rgb(248, 241, 207);
+    }
+    &[data-meteo="orage"] {
+        background-color: rgb(145, 158, 185);
+    }
+
+    &[data-meteo="neige"] {
+        background-color: rgb(230, 238, 240);
+    }
+}
+
+.meteo__icon {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        max-height: 40vh;
+        aspect-ratio: 1;
+    }
+
+    & icone-meteo {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.meteo__text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-xxl);
+    font-weight: 700;
+    color: color-mix(in oklab, var(--coul-principale-moyen-bleu) 60%, black 40%);
+    & p {
+        font-size: var(--font-xxl);
+        color: inherit;
+    }
+    & .temperature {
+        font-family: var(--font-accent);
+        font-weight: 700;
+    }
+}
+
+.error {
+    color: rgb(253, 182, 0);
+    font-size: var(--font-xxl);
+    text-align: center;
+}

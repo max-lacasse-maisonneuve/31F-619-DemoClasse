@@ -1,0 +1,22 @@
+@keyframes animSpinner {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(359deg);
+    }
+}
+
+.spinner {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.spinner img {
+    width: 30vw;
+    max-height: 30vh;
+    aspect-ratio: 1;
+    animation: animSpinner 5000ms ease-in-out infinite;
+}

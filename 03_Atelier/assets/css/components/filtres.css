@@ -1,0 +1,12 @@
+[data-liste-filtre] {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+[data-liste-filtre] [data-filtre-categorie] {
+    cursor: pointer;
+}
+
+[data-liste-filtre] [data-filtre-categorie]:hover {
+    color: var(--coul-principale-moyen-bleu);
+}
