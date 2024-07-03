@@ -4,7 +4,7 @@
     src: url("../../font/retrogaming/RetroGaming.ttf") format("truetype");
 }
 :root {
-    --font-main: "Retrogaming", Arial, Helvetica, sans-serif;
+    --font-main: "Inter", Arial, Helvetica, sans-serif;
     --font-accent: "Inter", Arial, Helvetica, sans-serif;
     --font-xs: 0.75rem;
     --font-s: 0.875rem;

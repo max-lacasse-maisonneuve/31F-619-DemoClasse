@@ -1,9 +1,18 @@
 main {
     flex: 2;
     display: flex;
-
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: var(--space-m);
+    gap: var(--space-m);
+}
+
+.entrave {
+    flex-basis: calc(50% - var(--space-m));
+    padding: var(--space-m);
+    border: 2px solid var(--coul-principale-fonce);
+    & .title {
+        font-size: var(--font-xl);
+        font-weight: 700;
+        color: var(--coul-principale-fonce);
+    }
 }
