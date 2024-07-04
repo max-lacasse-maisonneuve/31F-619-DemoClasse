@@ -7,3 +7,7 @@ main {
     flex-direction: column;
     padding: var(--space-m);
 }
+
+footer {
+    color: black;
+}

@@ -1,5 +1,6 @@
 // import { config } from "../../../config.js";
 import { codeMeteo, coordVilles } from "../data/codeMeteo.js";
+import IconeMeteo from "./IconeMeteo.js";
 
 class App {
     constructor() {
@@ -18,6 +19,42 @@ class App {
     }
 
     init() {
+        const url = "templates/footer.html";
+        fetch(url)
+            .then(function (reponse) {
+                return reponse.text();
+            })
+            .then(function (reponseText) {
+                let now = new Date();
+                reponseText = reponseText.replace("{{ APP_NAME }}", `Application météo. &copy; ${now.getFullYear()}`);
+                document.querySelector("[data-footer]").insertAdjacentHTML("beforeend", reponseText);
+            })
+            .catch(function (erreur) {
+                console.log(erreur);
+            });
+
+        //Ajouter les publicités
+        const pubData = [
+            {
+                title: "Pub 1",
+                description: "lorem ipsum",
+            },
+            {
+                title: "Pub 2",
+                description: "lorem ipsum",
+            },
+        ];
+
+        const gabaritPub = document.querySelector("template#publicite");
+        const pubConteneur = document.querySelector("[data-pub]");
+
+        pubData.forEach(function (data) {
+            const clone = gabaritPub.content.cloneNode(true);
+            clone.querySelector("h3").textContent = data.title;
+            clone.querySelector("h4").textContent = data.description;
+            pubConteneur.append(clone);
+        });
+
         this.getWeatherData(coordVilles.marseille);
         this.showHeader();
     }
@@ -25,7 +62,6 @@ class App {
     getHeader() {}
 
     showHeader() {
-        
         Object.keys(coordVilles).forEach(
             function (ville) {
                 let buttonTemplate = `<button>${ville}</button>`;

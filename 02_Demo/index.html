@@ -17,6 +17,7 @@
         <main data-app>
             <span class="spinner"><img src="assets/img/spinner.svg" alt="" /></span>
             <section class="meteo__icon">
+                <icone-meteo data-type="soleil"></icone-meteo>
                 <img src="" alt="" />
             </section>
             <section class="meteo__text">
@@ -27,5 +28,13 @@
                 <p class="error_text"></p>
             </section>
         </main>
+        <template id="publicite">
+            <div>
+                <h3>{{ PUB_TITLE }}</h3>
+                <h4>{{ PUB_DESC }}</h4>
+            </div>
+        </template>
+        <div data-pub></div>
+        <div data-footer></div>
     </body>
 </html>
