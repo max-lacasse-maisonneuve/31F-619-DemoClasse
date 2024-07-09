@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="assets/css/styles.css" />
-        <script type="module" src="assets/js/pages/index.js"></script>
-        <title>Appli-météo</title>
+        <title>Tâches</title>
+        <script src="assets/js/pages/index.js" type="module"></script>
+        <link rel="stylesheet" href="assets/css/main.css" />
     </head>
+    <body>
+        <section data-panneau="liste">
+            <h1>Liste des tâches</h1>
+            <button data-action="ajouter">Ajouter une tâche</button>
+        </section>
 
-    <body data-meteo="soleil" class="meteo">
-        <header>
-            <h1>Appli-météo</h1>
-            <div class="buttons"></div>
-        </header>
-        <main data-app>
-            <span class="spinner"><img src="assets/img/spinner.svg" alt="" /></span>
-            <section class="meteo__icon">
-                <icone-meteo data-type="soleil"></icone-meteo>
-                <img src="" alt="" />
-            </section>
-            <section class="meteo__text">
-                <p class="city"></p>
-                <p class="temperature"></p>
-            </section>
-            <section class="error">
-                <p class="error_text"></p>
-            </section>
-        </main>
-        <template id="publicite">
-            <div>
-                <h3>{{ PUB_TITLE }}</h3>
-                <h4>{{ PUB_DESC }}</h4>
+        <section data-panneau="formulaire">
+            <h1>Ajouter une tâche</h1>
+            <form data-action="ajouter">
+                <label for="tache">Tâche</label>
+                <input type="text" id="tache" name="tache" />
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+
+        <template id="toast-modale">
+            <div class="toast-modale">
+                <div class="toast-modale-content">
+                    <p class="toast-message">{{message}}</p>
+                </div>
             </div>
         </template>
-        <div data-pub></div>
-        <div data-footer></div>
+        <template id="tache">
+            <div class="tache" id="{{id}}">
+                <h2>{{tache}}</h2>
+                <h3>{{estTerminee}}</h3>
+            </div>
+        </template>
     </body>
 </html>

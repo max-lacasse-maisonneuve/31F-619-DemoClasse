@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: var(md-space);
+    background-color: var(--coul-principale-moyen-bleu);
+    padding: var(--xl-space);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: var(--sm-text);
+}
+nav .cart {
+    color: white;
+}
