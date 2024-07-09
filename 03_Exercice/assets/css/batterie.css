@@ -1,0 +1,29 @@
+[data-batterie] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: gray;
+    padding: 1rem;
+    border-radius: 15px;
+
+    & .batterie_conteneur {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &[data-niveau="faible"] {
+        background-color: red;
+    }
+
+    &[data-niveau="moitie"] {
+        background-color: orange;
+    }
+
+    &[data-niveau="plein"] {
+        background-color: limegreen;
+    }
+}
