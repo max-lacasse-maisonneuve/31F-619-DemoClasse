@@ -32,7 +32,8 @@ class App {
         this.#addFooter();
         this.#addAdvertisement();
         this.#showHeader();
-
+        this.#textHTML.classList.add("invisible");
+        this.#iconHTML.classList.add("invisible");
         //Au chargement, on récupère la position de l'utilisateur
         this.#getCurrentUserPosition();
     }
@@ -232,6 +233,9 @@ class App {
     #showWeatherInfo() {
         //On cache le spinner
         this.#spinner.classList.add("invisible");
+
+        this.#textHTML.classList.remove("invisible");
+        this.#iconHTML.classList.remove("invisible");
 
         //On modifie le contenu HTML
         this.#textHTML.querySelector(".city").textContent = this.#city;

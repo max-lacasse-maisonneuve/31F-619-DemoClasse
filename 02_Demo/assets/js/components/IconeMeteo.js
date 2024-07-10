@@ -27,6 +27,7 @@ class IconeMeteo extends HTMLElement {
                 aspect-ratio:1;
             }
             `);
+        this.shadowDom.adoptedStyleSheets = [feuilleStyles]; //Ajoute la feuille de style au shadowDom
     }
 
     #genererHTML() {

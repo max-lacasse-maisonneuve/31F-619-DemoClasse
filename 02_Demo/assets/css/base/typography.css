@@ -6,6 +6,7 @@
 :root {
     --font-main: "Retrogaming", Arial, Helvetica, sans-serif;
     --font-accent: "Inter", Arial, Helvetica, sans-serif;
+    --font-xxs: 0.5rem;
     --font-xs: 0.75rem;
     --font-s: 0.875rem;
     --font-m: 1.25rem;

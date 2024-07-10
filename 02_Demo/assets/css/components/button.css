@@ -1,15 +1,20 @@
-.btn {
+.btn,
+button {
     border-radius: 15px;
-    background-color: var(--coul-principale-moyen-bleu);
+    background-color: var(--coul-principale-fonce);
+    color: var(--coul-blanc);
 
     min-width: 10vw;
     width: fit-content;
-    padding: 1.5rem;
+    padding: 1rem;
     cursor: pointer;
     border: 2px solid var(--coul-principale-pale-bleu);
     transition: border 300ms, background-color 300ms;
     text-align: center;
     margin: 1rem 0;
+    font-weight: 900;
+    font-size: var(--font-xxs);
+    text-transform: uppercase;
 }
 
 .btn p {
