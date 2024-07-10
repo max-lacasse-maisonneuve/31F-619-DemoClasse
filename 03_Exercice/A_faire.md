@@ -18,7 +18,7 @@ Vous devez changer l'icône en fonction du niveau de batterie.
 
 Je vous ai fournis des icônes mais vous pouvez en choisir d'autres ici: [https://www.iconfinder.com/search?q=battery&price=free](https://www.iconfinder.com/search?q=battery&price=free)
 
-**À noter que vous devez tester avec Chrome ou Edge pour que l'API fonctionne. Firefox ne fonctionnera pas**
+**À noter que vous devez tester avec Chrome ou Edge pour que l'API fonctionne. Firefox  et SAFARI ne fonctionneront  pas**
 
 ## Affichage
 
