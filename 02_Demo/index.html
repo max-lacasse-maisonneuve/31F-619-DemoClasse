@@ -8,32 +8,46 @@
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
     <body>
-        <section data-panneau="liste">
-            <h1>Liste des tâches</h1>
-            <button data-action="ajouter">Ajouter une tâche</button>
-        </section>
+        <header>
+            <h1>Application de gestion de tâches</h1>
+            <nav>
+                <a href="#liste" data-panneau="liste">Liste des tâches</a>
+                <a href="#ajouter" data-panneau="formulaire">Ajouter une tâche</a>
+            </nav>
+        </header>
 
-        <section data-panneau="formulaire">
-            <h1>Ajouter une tâche</h1>
-            <form data-action="ajouter">
-                <label for="tache">Tâche</label>
-                <input type="text" id="tache" name="tache" />
-                <button type="submit">Ajouter</button>
-            </form>
-        </section>
+        <main>
+            <section data-panneau="liste">
+                <h1>Liste des tâches</h1>
+                <button data-action="ajouter">Ajouter une tâche</button>
+            </section>
 
-        <template id="toast-modale">
-            <div class="toast-modale">
-                <div class="toast-modale-content">
-                    <p class="toast-message">{{message}}</p>
+            <section data-panneau="detail">
+                <h1>{{ Tache }}</h1>
+            </section>
+
+            <section data-panneau="formulaire">
+                <h1>Ajouter une tâche</h1>
+                <form data-action="ajouter">
+                    <label for="tache">Tâche</label>
+                    <input type="text" id="tache" name="tache" />
+                    <button type="submit">Ajouter</button>
+                </form>
+            </section>
+
+            <template id="toast-modale">
+                <div class="toast-modale">
+                    <div class="toast-modale-content">
+                        <p class="toast-message">{{message}}</p>
+                    </div>
                 </div>
-            </div>
-        </template>
-        <template id="tache">
-            <div class="tache" id="{{id}}">
-                <h2>{{tache}}</h2>
-                <h3>{{estTerminee}}</h3>
-            </div>
-        </template>
+            </template>
+            <template id="tache">
+                <div class="tache" id="{{id}}">
+                    <h2>{{tache}}</h2>
+                    <h3>{{estTerminee}}</h3>
+                </div>
+            </template>
+        </main>
     </body>
 </html>
