@@ -1,5 +1,5 @@
-import App from "../components/App.js";
+import App from "../classes/App.js";
 
 (function () {
-    // let app = new App();
+    let app = new App();
 })();

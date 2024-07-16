@@ -33,6 +33,11 @@
     border: 2px solid var(--coul-accent-pale);
 }
 
+.btn[data-etat="danger"] {
+    background-color: var(--coul-accent-moyen);
+    border: 2px solid var(--coul-accent-pale);
+}
+
 .btn.danger:hover {
     background-color: var(--coul-accent-fonce);
 }

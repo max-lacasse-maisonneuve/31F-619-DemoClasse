@@ -3,6 +3,7 @@
 /* Styles de base */
 :root {
     --police-principale: "Inter", Arial, Helvetica, sans-serif;
+    --police-accent: "Inter", Arial, Helvetica, sans-serif;
 
     --xl-text: 3.052rem;
     --lg-text: 2.441rem;
