@@ -61,7 +61,13 @@ export default class GestionnaireSondage {
     /**
      * Récupère les sondages depuis le serveur avec une requête HTTP GET (via FETCH)
      */
-    getSondages() {}
+    async getSondages() {
+        const reponse = await fetch("http://localhost:80/api/sondages/rechercher.php");
+        const sondages = await reponse.json();
+        this.#sondages = sondages;
+        // console.log(sondages);
+        this.mettreAJourLesSondagesHTML();
+    }
 
     /**
      * Ajoute un nouveau sondage au serveur avec une requête HTTP POST (via FETCH)
