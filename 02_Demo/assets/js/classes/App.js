@@ -9,9 +9,9 @@ class App {
         this.#formulaire;
         this.#router;
 
-        this.panneauListeHTML = this.conteneur.querySelector("[data-panneau='liste']");
-        this.panneauDetailHTML = this.conteneur.querySelector("[data-panneau='detail']");
-        this.panneauFormulaireHTML = this.conteneur.querySelector("[data-panneau='formulaire']");
+        this.panneauListeHTML = document.querySelector("[data-panneau='liste']");
+        this.panneauDetailHTML = document.querySelector("[data-panneau='detail']");
+        this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
 
         this.#cacherTout();
     }
