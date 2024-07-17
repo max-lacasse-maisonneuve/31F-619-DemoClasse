@@ -1,3 +1,4 @@
+import Router from "./Router.js";
 class App {
     #taches;
     #formulaire;
@@ -7,11 +8,12 @@ class App {
         this.#taches = [];
 
         this.#formulaire;
-        this.#router;
 
         this.panneauListeHTML = document.querySelector("[data-panneau='liste']");
         this.panneauDetailHTML = document.querySelector("[data-panneau='detail']");
         this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
+
+        this.#router = new Router(this);
 
         this.#cacherTout();
     }
@@ -32,7 +34,7 @@ class App {
         console.log("afficherPanneauListe");
         this.#cacherTout();
         this.panneauListeHTML.classList.remove("invisible");
-        this.recupererToutesLesTaches();
+        // this.recupererToutesLesTaches();
     }
 
     afficherPanneauDetail(id) {
