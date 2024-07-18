@@ -20,7 +20,7 @@ class Tache {
 
         this.conteneur.appendChild(clone);
         this.elementHTML = this.conteneur.lastElementChild;
- 
+
         this.elementHTML.innerHTML = this.elementHTML.innerHTML.replace(/{{id}}/g, this.id);
         this.elementHTML.innerHTML = this.elementHTML.innerHTML.replace(/{{nom}}/g, this.nom);
 

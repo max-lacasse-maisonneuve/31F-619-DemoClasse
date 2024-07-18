@@ -7,7 +7,7 @@
         <script src="/assets/js/pages/index.js" type="module"></script>
         <link rel="stylesheet" href="/assets/css/main.css" />
     </head>
-    <body>
+    <body data-app>
         <header>
             <h1>Application de gestion de tâches</h1>
             <nav>
@@ -18,21 +18,21 @@
 
         <main>
             <section data-panneau="liste">
-                <h1>Liste des tâches</h1>
+                <h2>Liste des tâches</h2>
                 <div class="liste-taches"></div>
                 <template id="tache">
                     <div class="tache" id="{{id}}">
-                        <h2>{{nom}}</h2>
+                        <h3>{{nom}}</h3>
                     </div>
                 </template>
             </section>
 
             <section data-panneau="detail">
-                <h1>{{ Tache }}</h1>
+                <h2>{{ Tache }}</h2>
             </section>
 
             <section data-panneau="formulaire">
-                <h1>Ajouter une tâche</h1>
+                <h2>Ajouter une tâche</h2>
                 <form data-action="ajouter">
                     <div class="input-group">
                         <label for="nom">Nom</label>
