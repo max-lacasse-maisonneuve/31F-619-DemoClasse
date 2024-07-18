@@ -34,6 +34,20 @@ class App {
         });
     }
 
+    async recupererUneTache(id) {
+        const reponse = await fetch(`http://localhost:8888/backend/taches/lireUn.php?id=${id}`);
+        const tache = await reponse.json();
+        const tachesInfos = tache[0];
+        const { nom, date, description, estTerminee } = tachesInfos;
+
+        this.panneauDetailHTML.querySelector("[data-nom]").textContent = nom;
+        this.panneauDetailHTML.querySelector("[data-date]").textContent = date;
+        this.panneauDetailHTML.querySelector("[data-description]").textContent = description;
+        this.panneauDetailHTML.querySelector("[data-est-terminee]").textContent = estTerminee
+            ? "Terminée"
+            : "Non terminée";
+    }
+
     #cacherTout() {
         this.panneauListeHTML.classList.add("invisible");
         this.panneauDetailHTML.classList.add("invisible");
@@ -47,11 +61,13 @@ class App {
     }
 
     afficherPanneauDetail(id) {
+        console.log(id);
         //Récupérer le détail de l'exercice avec Fetch et le id
         console.log("panneauDetail");
         this.#cacherTout();
         this.panneauDetailHTML.classList.remove("invisible");
         //Récupérer le détail d'une tâche avec Fetch et le id
+        this.recupererUneTache(id);
     }
 
     afficherPanneauFormulaire() {

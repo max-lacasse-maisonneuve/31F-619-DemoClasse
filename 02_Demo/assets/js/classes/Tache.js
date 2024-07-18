@@ -28,7 +28,7 @@ class Tache {
             "click",
             function () {
                 console.log("click");
-                history.pushState(null, null, `/detail/${this.id}`);
+                history.pushState({}, "", `/detail/${this.id}`);
                 this.app.router.miseAJourURL();
             }.bind(this)
         );
