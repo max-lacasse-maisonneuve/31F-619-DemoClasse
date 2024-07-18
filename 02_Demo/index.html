@@ -19,13 +19,12 @@
         <main>
             <section data-panneau="liste">
                 <h1>Liste des tâches</h1>
-                <div class="liste-taches">
-                    <template id="tache">
-                        <div class="tache" id="{{id}}">
-                            <h2>{{nom}}</h2>
-                        </div>
-                    </template>
-                </div>
+                <div class="liste-taches"></div>
+                <template id="tache">
+                    <div class="tache" id="{{id}}">
+                        <h2>{{nom}}</h2>
+                    </div>
+                </template>
             </section>
 
             <section data-panneau="detail">
@@ -64,12 +63,12 @@
                     </div>
                 </div>
             </template>
-            <template id="tache">
+            <!-- <template id="tache">
                 <div class="tache" id="{{id}}">
                     <h2>{{tache}}</h2>
                     <h3>{{estTerminee}}</h3>
                 </div>
-            </template>
+            </template> -->
         </main>
     </body>
 </html>

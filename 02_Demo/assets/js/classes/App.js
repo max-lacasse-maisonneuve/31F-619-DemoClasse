@@ -1,5 +1,6 @@
 import Router from "./Router.js";
 import FormulaireTache from "./FormulaireTache.js";
+import Tache from "./Tache.js";
 
 class App {
     #taches;
@@ -14,11 +15,9 @@ class App {
         this.panneauListeHTML = document.querySelector("[data-panneau='liste']");
         this.panneauDetailHTML = document.querySelector("[data-panneau='detail']");
         this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
-
-        this.gabaritTaches = this.panneauListeHTML.querySelector("template#tache");
         this.listeTachesHTML = this.panneauListeHTML.querySelector(".liste-taches");
-        
-        this.#router = new Router(this);
+
+        this.router = new Router(this);
         this.#formulaire = new FormulaireTache(this);
     }
 
@@ -29,24 +28,9 @@ class App {
         this.#taches = [];
         this.listeTachesHTML.innerHTML = "";
 
-        taches.forEach((element) => {
-            this.#taches.push(element);
-            let clone = this.gabaritTaches.content.cloneNode(true);
-
-            this.listeTachesHTML.appendChild(clone);
-            let elementHTML = this.listeTachesHTML.lastElementChild;
-
-            elementHTML.innerHTML = elementHTML.innerHTML.replace(/{{id}}/g, element.id);
-            elementHTML.innerHTML = elementHTML.innerHTML.replace(/{{nom}}/g, element.nom);
-
-            elementHTML.addEventListener(
-                "click",
-                function () {
-                    console.log("click");
-                    history.pushState(null, null, `/detail/${element.id}`);
-                    this.#router.miseAJourURL();
-                }.bind(this)
-            );
+        taches.forEach((tache) => {
+            this.#taches.push(tache);
+            new Tache(tache, this.listeTachesHTML, this);
         });
     }
 
