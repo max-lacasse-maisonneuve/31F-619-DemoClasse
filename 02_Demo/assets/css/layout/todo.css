@@ -1,3 +1,7 @@
+body {
+    /* background-color: blue; */
+}
+
 /* Garder à la fin */
 .invisible {
     display: none;

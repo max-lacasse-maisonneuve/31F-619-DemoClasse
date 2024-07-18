@@ -1,2 +1,4 @@
 <?php
-//Sera éventuellement le routeur de notre application
+//Get url request
+$request = $_SERVER['REQUEST_URI'];
+echo $request;

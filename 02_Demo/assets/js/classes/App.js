@@ -1,4 +1,6 @@
 import Router from "./Router.js";
+import FormulaireTache from "./FormulaireTache.js";
+
 class App {
     #taches;
     #formulaire;
@@ -13,15 +15,39 @@ class App {
         this.panneauDetailHTML = document.querySelector("[data-panneau='detail']");
         this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
 
+        this.gabaritTaches = this.panneauListeHTML.querySelector("template#tache");
+        this.listeTachesHTML = this.panneauListeHTML.querySelector(".liste-taches");
+        
         this.#router = new Router(this);
-
-        this.#cacherTout();
+        this.#formulaire = new FormulaireTache(this);
     }
 
     async recupererToutesLesTaches() {
-        const reponse = await fetch("http://localhost/backend/taches/lireTout.php");
+        const reponse = await fetch("http://localhost:8888/backend/taches/lireTout.php");
         const taches = await reponse.json();
-        console.log(taches);
+
+        this.#taches = [];
+        this.listeTachesHTML.innerHTML = "";
+
+        taches.forEach((element) => {
+            this.#taches.push(element);
+            let clone = this.gabaritTaches.content.cloneNode(true);
+
+            this.listeTachesHTML.appendChild(clone);
+            let elementHTML = this.listeTachesHTML.lastElementChild;
+
+            elementHTML.innerHTML = elementHTML.innerHTML.replace(/{{id}}/g, element.id);
+            elementHTML.innerHTML = elementHTML.innerHTML.replace(/{{nom}}/g, element.nom);
+
+            elementHTML.addEventListener(
+                "click",
+                function () {
+                    console.log("click");
+                    history.pushState(null, null, `/detail/${element.id}`);
+                    this.#router.miseAJourURL();
+                }.bind(this)
+            );
+        });
     }
 
     #cacherTout() {
@@ -31,10 +57,9 @@ class App {
     }
 
     afficherPanneauListe() {
-        console.log("afficherPanneauListe");
         this.#cacherTout();
         this.panneauListeHTML.classList.remove("invisible");
-        // this.recupererToutesLesTaches();
+        this.recupererToutesLesTaches();
     }
 
     afficherPanneauDetail(id) {

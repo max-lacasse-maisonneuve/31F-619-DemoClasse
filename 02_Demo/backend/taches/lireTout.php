@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $host = "localhost";
-$port = "3306";
+$port = "8889";
 $dbname = "to-do-list";
 $username = "root";
 $password = "root";

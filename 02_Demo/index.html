@@ -4,22 +4,28 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tâches</title>
-        <script src="assets/js/pages/index.js" type="module"></script>
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="/assets/js/pages/index.js" type="module"></script>
+        <link rel="stylesheet" href="/assets/css/main.css" />
     </head>
     <body>
         <header>
             <h1>Application de gestion de tâches</h1>
             <nav>
-                <a href="liste" data-lien>Liste des tâches</a>
-                <a href="ajouter" data-lien>Ajouter une tâche</a>
+                <a href="/liste" data-lien>Liste des tâches</a>
+                <a href="/ajouter" data-lien>Ajouter une tâche</a>
             </nav>
         </header>
 
         <main>
             <section data-panneau="liste">
                 <h1>Liste des tâches</h1>
-                <button data-action="ajouter">Ajouter une tâche</button>
+                <div class="liste-taches">
+                    <template id="tache">
+                        <div class="tache" id="{{id}}">
+                            <h2>{{nom}}</h2>
+                        </div>
+                    </template>
+                </div>
             </section>
 
             <section data-panneau="detail">
@@ -29,8 +35,24 @@
             <section data-panneau="formulaire">
                 <h1>Ajouter une tâche</h1>
                 <form data-action="ajouter">
-                    <label for="tache">Tâche</label>
-                    <input type="text" id="tache" name="tache" />
+                    <div class="input-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" required />
+                    </div>
+                    <div class="input-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" id="description" name="description" required> </textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="estTerminee">Est terminée</label>
+                        <input type="checkbox" id="estTerminee" name="estTerminee" />
+                    </div>
                     <button type="submit">Ajouter</button>
                 </form>
             </section>

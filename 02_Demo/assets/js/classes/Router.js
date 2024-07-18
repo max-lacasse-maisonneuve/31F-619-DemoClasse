@@ -14,34 +14,23 @@ class Router {
     }
 
     miseAJourURL() {
-        const url = window.location.pathname.slice(1);
-        console.log(url);
-        const tabRoutes = url.split("/");
-        const route = tabRoutes[0];
-        const id = parseInt(tabRoutes[1]);
-       
-        // switch (route) {
-        //     case "afficher":
-        //         this.routes.afficher();
-        //         break;
-        //     case "formulaire":
-        //         this.routes.formulaire();
-        // }
+        const url = window.location.pathname.slice(1); //On récupère l'URL sans le /
+        const parts = url.split("/"); //On découpe l'URL en parties distinctes dans un tableau
+        let route = parts[0]; //On récupère le premier élément du tableau. Il n'y a pas de # dans l'URL
+        let id = parts[1]; //On récupère le deuxième élément du tableau
+
+        // const params = new URLSearchParams(document.location.search);
+        // const id = params.get("id");
+        console.log(route, id);
+
         const fonctionRoute = this.routes[route];
         if (id) {
             fonctionRoute(id);
-        } else if (fonctionRoute !== undefined) {
+        } else if (fonctionRoute) {
             fonctionRoute();
         } else {
             this.routes["liste"]();
         }
-        // if (id) {
-        //     this.routes[route](id);
-        // } else if (this.routes[route] !== undefined) {
-        //     this.routes[route]();
-        // } else {
-        //     this.routes["afficher"]();
-        // }
     }
 
     onClicLien(evenement) {
@@ -50,7 +39,7 @@ class Router {
             evenement.preventDefault();
             const url = elementClique.href;
             history.pushState({}, "", url);
-        
+
             this.miseAJourURL();
         }
     }
