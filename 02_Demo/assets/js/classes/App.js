@@ -1,7 +1,7 @@
 import Router from "./Router.js";
 import FormulaireTache from "./FormulaireTache.js";
 import Tache from "./Tache.js";
-
+import ToastModale from "./ToastModale.js";
 class App {
     #taches;
     #formulaire;
@@ -12,14 +12,21 @@ class App {
 
         this.#formulaire;
 
+        this.darkModeNav = document.querySelector("[data-action='dark-mode']");
         this.panneauListeHTML = document.querySelector("[data-panneau='liste']");
         this.panneauDetailHTML = document.querySelector("[data-panneau='detail']");
         this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
         this.listeTachesHTML = this.panneauListeHTML.querySelector(".liste-taches");
 
+        //TODO: AddEventListener mode nuit
+
         this.router = new Router(this);
         this.#formulaire = new FormulaireTache(this);
+
+        //TODO: Au chargement, vérifier le mode nuit
     }
+
+    //TODO: Dark mode
 
     async recupererToutesLesTaches() {
         const reponse = await fetch("http://localhost:8888/backend/taches/lireTout.php");
@@ -46,6 +53,13 @@ class App {
         this.panneauDetailHTML.querySelector("[data-est-terminee]").textContent = estTerminee
             ? "Terminée"
             : "Non terminée";
+    }
+
+    async supprimerUneTache(id) {
+        //TODO:
+        //Suppprimer une tâche
+        //Rediriger
+        //Afficher un toast
     }
 
     #cacherTout() {

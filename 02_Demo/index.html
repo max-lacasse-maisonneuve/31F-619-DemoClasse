@@ -4,6 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tâches</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <script src="/assets/js/pages/index.js" type="module"></script>
         <link rel="stylesheet" href="/assets/css/main.css" />
     </head>
@@ -14,6 +21,10 @@
                 <a href="/liste" data-lien>Liste des tâches</a>
                 <a href="/ajouter" data-lien>Ajouter une tâche</a>
             </nav>
+            <nav data-action="dark-mode">
+                <span class="btn fa fa-moon" data-mode="dark"></span>
+                <span class="btn fa fa-sun" data-mode="light"></span>
+            </nav>
         </header>
 
         <main>
@@ -23,6 +34,7 @@
                 <template id="tache">
                     <div class="tache" id="{{id}}">
                         <h3>{{nom}}</h3>
+                        <div class="btn" data-action="supprimer"><i class="fa fa-trash"></i>Supprimer</div>
                     </div>
                 </template>
             </section>
@@ -66,12 +78,6 @@
                     </div>
                 </div>
             </template>
-            <!-- <template id="tache">
-                <div class="tache" id="{{id}}">
-                    <h2>{{tache}}</h2>
-                    <h3>{{estTerminee}}</h3>
-                </div>
-            </template> -->
         </main>
     </body>
 </html>

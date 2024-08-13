@@ -11,27 +11,25 @@ class Tache {
         this.estTerminee = estTerminee;
 
         this.gabaritTaches = document.querySelector("template#tache");
-
         this.injecterHTML();
     }
 
     injecterHTML() {
         let clone = this.gabaritTaches.content.cloneNode(true);
 
-        this.conteneur.appendChild(clone);
+        this.conteneur.append(clone);
         this.elementHTML = this.conteneur.lastElementChild;
 
-        this.elementHTML.innerHTML = this.elementHTML.innerHTML.replace(/{{id}}/g, this.id);
-        this.elementHTML.innerHTML = this.elementHTML.innerHTML.replace(/{{nom}}/g, this.nom);
+        this.elementHTML.id = this.id;
+        this.elementHTML.innerHTML = this.elementHTML.innerHTML.replaceAll(/{{nom}}/g, this.nom);
 
-        this.elementHTML.addEventListener(
-            "click",
-            function () {
-                console.log("click");
-                history.pushState({}, "", `/detail/${this.id}`);
-                this.app.router.miseAJourURL();
-            }.bind(this)
-        );
+        this.elementHTML.addEventListener("click", this.onClic.bind(this));
+    }
+
+    onClic(evenement) {
+        //TODO: Révision bubbling pour bouton
+        history.pushState({}, "", `/detail/${this.id}`);
+        this.app.router.miseAJourURL();
     }
 }
 

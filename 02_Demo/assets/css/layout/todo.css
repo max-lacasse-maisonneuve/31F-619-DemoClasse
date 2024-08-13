@@ -17,12 +17,12 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: #f8f9fa;
+        background-color: var(--coul-blanc);
         padding: 1rem;
 
         & a {
             text-decoration: none;
-            color: #000;
+            color: var(--coul-noir);
             margin: 0 1rem;
             font-size: 1.15rem;
             &:hover {
@@ -41,18 +41,25 @@
         flex-direction: column;
         gap: 0.5rem;
         & .tache {
-            border: 2px solid tomato;
+            border: 2px solid var(--coul-principale);
             border-radius: 15px;
             padding: 1rem;
             cursor: pointer;
             &:hover {
-                background-color: tomato;
-                color: white;
+                background-color: var(--coul-principale);
+                color: var(--coul-blanc);
             }
         }
     }
+    & .btn:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }
 
+.fa {
+    margin-right: 5px;
+}
 /* Garder à la fin */
 .invisible {
     display: none;
