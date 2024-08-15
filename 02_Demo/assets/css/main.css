@@ -4,3 +4,11 @@
 
 @import url("./components/toast.css");
 @import url("./layout/todo.css");
+
+.utilisateur {
+    color: tomato;
+    transition: all 350ms;
+}
+.utilisateur:hover {
+    transform: rotate(90deg);
+}

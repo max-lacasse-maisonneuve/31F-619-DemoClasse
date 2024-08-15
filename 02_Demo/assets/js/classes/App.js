@@ -46,6 +46,8 @@ class App {
     }
     async recupererToutesLesTaches() {
         const reponse = await fetch("http://localhost:8888/backend/taches/lireTout.php");
+        console.log(reponse);
+
         const taches = await reponse.json();
 
         this.#taches = [];
@@ -58,17 +60,28 @@ class App {
     }
 
     async recupererUneTache(id) {
-        const reponse = await fetch(`http://localhost:8888/backend/taches/lireUn.php?id=${id}`);
-        const tache = await reponse.json();
-        const tachesInfos = tache[0];
-        const { nom, date, description, estTerminee } = tachesInfos;
+        try {
+            const reponse = await fetch(`http://localhost:8888/backend/taches/lireUn.php?id=${id}`);
+            console.log(reponse);
+            const tache = await reponse.json();
+            
+            if (reponse.ok == false) {
+                throw new Error(tache.message);
+            }
 
-        this.panneauDetailHTML.querySelector("[data-nom]").textContent = nom;
-        this.panneauDetailHTML.querySelector("[data-date]").textContent = date;
-        this.panneauDetailHTML.querySelector("[data-description]").textContent = description;
-        this.panneauDetailHTML.querySelector("[data-est-terminee]").textContent = estTerminee
-            ? "Terminée"
-            : "Non terminée";
+            const tachesInfos = tache[0];
+            const { nom, date, description, estTerminee } = tachesInfos;
+
+            this.panneauDetailHTML.querySelector("[data-nom]").textContent = nom;
+            this.panneauDetailHTML.querySelector("[data-date]").textContent = date;
+            this.panneauDetailHTML.querySelector("[data-description]").textContent = description;
+            this.panneauDetailHTML.querySelector("[data-est-terminee]").textContent = estTerminee
+                ? "Terminée"
+                : "Non terminée";
+        } catch (error) {
+            console.error(error.message);
+            new ToastModale("Une erreur est survenue", "error");
+        }
     }
 
     async supprimerUneTache(id) {
