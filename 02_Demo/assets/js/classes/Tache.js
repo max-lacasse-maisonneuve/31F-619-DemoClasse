@@ -27,9 +27,20 @@ class Tache {
     }
 
     onClic(evenement) {
-        //TODO: Révision bubbling pour bouton
-        history.pushState({}, "", `/detail/${this.id}`);
-        this.app.router.miseAJourURL();
+        const declencheur = evenement.target;
+        const bouton = declencheur.closest("[data-action='supprimer']");
+        const tache = declencheur.closest(".tache");
+       
+
+        if (bouton !== null) {
+            //Supprime
+            const id = tache.id;
+            this.app.supprimerUneTache(id);
+
+        } else {
+            history.pushState({}, "", `/detail/${this.id}`);
+            this.app.router.miseAJourURL();
+        }
     }
 }
 

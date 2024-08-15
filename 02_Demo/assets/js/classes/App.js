@@ -18,16 +18,32 @@ class App {
         this.panneauFormulaireHTML = document.querySelector("[data-panneau='formulaire']");
         this.listeTachesHTML = this.panneauListeHTML.querySelector(".liste-taches");
 
-        //TODO: AddEventListener mode nuit
+        this.darkModeNav.addEventListener("click", this.switchMode.bind(this));
 
         this.router = new Router(this);
         this.#formulaire = new FormulaireTache(this);
 
-        //TODO: Au chargement, vérifier le mode nuit
+        this.checkMode();
+        localStorage.clear();
     }
 
-    //TODO: Dark mode
-
+    switchMode(evenement) {
+        const bouton = evenement.target.closest("[data-mode]");
+        if (bouton !== null) {
+            const mode = bouton.dataset.mode;
+            document.body.dataset.mode = mode;
+            localStorage.setItem("todo-dark-mode", mode);
+            this.checkMode();
+        }
+    }
+    checkMode() {
+        const selectedMode = localStorage.getItem("todo-dark-mode") || "light";
+        document.body.dataset.mode = selectedMode;
+        const boutons = this.darkModeNav.querySelectorAll("[data-mode]");
+        boutons.forEach(function (bouton) {
+            bouton.classList.toggle("invisible", bouton.dataset.mode == selectedMode);
+        });
+    }
     async recupererToutesLesTaches() {
         const reponse = await fetch("http://localhost:8888/backend/taches/lireTout.php");
         const taches = await reponse.json();
@@ -56,10 +72,15 @@ class App {
     }
 
     async supprimerUneTache(id) {
-        //TODO:
-        //Suppprimer une tâche
+        //Supprimer une tâche
+        const reponse = await fetch(`http://localhost:8888/backend/taches/supprimerUn.php?id=${id}`);
+        const tache = await reponse.json();
         //Rediriger
+        history.pushState({}, "", "/");
+        this.recupererToutesLesTaches();
+
         //Afficher un toast
+        new ToastModale("La tâche a été supprimée");
     }
 
     #cacherTout() {

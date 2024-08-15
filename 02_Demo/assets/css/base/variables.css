@@ -5,3 +5,8 @@
 }
 
 /*TODO: Choisir les couleurs du mode nuit*/
+body[data-mode="dark"] {
+    --coul-principale: hotpink;
+    --coul-blanc: #333;
+    --coul-noir: white;
+}
